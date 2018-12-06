@@ -6,7 +6,7 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 09:53:21 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/12/05 17:35:15 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:25:58 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int			padd_d(char *nbr, char *c, int *flag)
 	return (counter + ft_strlen(nbr));
 }
 
-int			ft_padding_nbr(long long nbr, int *flag, char *c)
+int			ft_padding_nbr(intmax_t nbr, int *flag, char *c)
 {
 	char	*temp;
 	int		i;

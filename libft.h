@@ -6,7 +6,7 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 13:19:18 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/12/05 16:41:16 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:25:34 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct	s_info
 	int				flag[5];// 0->-, 1->+, 2->space, 3->0, 4->#
 	int				field_width;// -1-> none, -2->*
 	int				precision;//-1->none, -2->*
-	int				lenght_modifier;// 1-> l, 2->ll, 3->h, 4->hh, 5->L, 0->none
+	int				lenght_modifier;// 1-> l, 2->ll, 3->h, 4->hh, 5->L, 6->j, 7->z, 0->none
 	int				len;
 }				t_info;
 
@@ -38,8 +38,8 @@ void			ft_putstr(char const *s);
 void			ft_putnbr(long long n);
 void			ft_putunbr(unsigned long long n);
 size_t			ft_strlen(const char *str);
-char			*ft_itoa(long long n);
-char			*ft_uitoa(unsigned long long n);
+char			*ft_itoa(intmax_t n);
+char			*ft_uitoa(uintmax_t n);
 char			*ft_strdup(const char *s1);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
@@ -106,11 +106,11 @@ void			ft_signnbr(int nbr);
 void			ft_spacenbr(int nbr);
 int				ft_padding_char(unsigned int main, int side, char c, int *len);//1->right, 2->left
 int				ft_padding_str(char *str, int side, char c, int len); //1->right, 2->left
-int				ft_padding_nbr(long long nbr, int *flag, char *c); //1->right, 2->left
+int				ft_padding_nbr(intmax_t nbr, int *flag, char *c); //1->right, 2->left
 int				ft_padding_ptr(unsigned long int add, int side, char *c, int *len);//1->right, 2->left
-int				ft_padding_oct(unsigned long long nbr, int *par, char c, char conv);//1->right, 2->left
+int				ft_padding_oct(uintmax_t nbr, int *par, char c, char conv);//1->right, 2->left
 int				ft_padding_ver(char *nbr, int *par, char *c);//1->right, 2->left
-char			*ft_putoct(unsigned long long nbr);
+char			*ft_putoct(uintmax_t nbr);
 char			*ft_puthexa(unsigned long long nbr, char c);//a->Lower, A->Upper
 char			*ft_putpointer(unsigned long int point);
 int				treat_c(va_list *ap, t_info *info);

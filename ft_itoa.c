@@ -6,16 +6,16 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/04 14:24:10 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/12/06 14:08:24 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:11:28 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	lencal(long long n)
+static	size_t	lencal(intmax_t n)
 {
 	size_t				len;
-	unsigned long long	j;
+	uintmax_t			j;
 
 	len = 0;
 	j = n;
@@ -33,11 +33,11 @@ static	size_t	lencal(long long n)
 	return (len);
 }
 
-char			*ft_itoa(long long n)
+char			*ft_itoa(intmax_t n)
 {
 	char				*temp;
-	unsigned long long	i;
-	unsigned long long	j;
+	int					i;
+	uintmax_t			j;
 
 	i = lencal(n) - 1;
 	if (!(temp = (char*)malloc(sizeof(char) * (i + 2))))
@@ -59,7 +59,7 @@ char			*ft_itoa(long long n)
 	return (temp);
 }
 
-char			*ft_uitoa(unsigned long long n)
+char			*ft_uitoa(uintmax_t n)
 {
 	char				*temp;
 	char				temp2[2];

@@ -6,7 +6,7 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 13:12:52 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/12/06 14:22:45 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:12:09 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int				put_o(char *nbr, int *par, char c, char conv)
 	return (counter + ft_strlen(nbr));
 }
 
-int				ft_padding_oct(unsigned long long nbr, int *par, char c, char conv)
+int				ft_padding_oct(uintmax_t  nbr, int *par, char c, char conv)
 {
 	char	*temp;
 	int		size;

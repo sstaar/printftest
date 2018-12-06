@@ -6,20 +6,24 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 12:59:21 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/11/29 17:57:50 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:25:21 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long		treat_mod(va_list *ap, t_info *info)
+intmax_t		treat_mod(va_list *ap, t_info *info)
 {
-	long long	nbr;
+	intmax_t	nbr;
 
 	if (info->lenght_modifier == 1)
 		nbr = va_arg(*ap, long);
 	else if (info->lenght_modifier == 2)
 		nbr = va_arg(*ap, long long);
+	else if (info->lenght_modifier == 6)
+		nbr = va_arg(*ap, intmax_t);
+	else if (info->lenght_modifier == 7)
+		nbr = va_arg(*ap, ssize_t);
 	else
 	{
 		nbr = va_arg(*ap, int);

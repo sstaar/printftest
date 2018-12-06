@@ -6,7 +6,7 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 11:55:05 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/12/06 14:19:10 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:18:29 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			check_if_start(char c)
 			c == '#' || c == '+' || c == '-' || c == '0' || c == 'h' ||
 			c == 'l' || c == 'L' || (c >= '0' && c <= '9') || c == '.' ||
 			c == '*' || c == ' ' || c == 'S' || c == 'C' || c == 'D' ||
-			c == 'O' || c == 'U' || c == '%')
+			c == 'O' || c == 'U' || c == '%' || c == 'z' || c == 'j')
 		return (1);
 	else
 		return (0);
@@ -118,7 +118,7 @@ int			check_lenght_modifier(char *str, t_info **info)
 		(*info)->lenght_modifier = 1;
 		return (1);
 	}
-	else if ((str[0] == 'l' && str[1] && str[1] == 'l') || str[0] == 'j' || str[0] == 'z')
+	else if (str[0] == 'l' && str[1] && str[1] == 'l')
 	{
 		(*info)->lenght_modifier = 2;
 		return (2);
@@ -136,6 +136,16 @@ int			check_lenght_modifier(char *str, t_info **info)
 	else if (str[0] == 'L')
 	{
 		(*info)->lenght_modifier = 5;
+		return (1);
+	}
+	else if (str[0] == 'j')
+	{
+		(*info)->lenght_modifier = 6;
+		return (1);
+	}
+	else if (str[0] == 'z')
+	{
+		(*info)->lenght_modifier = 7;
 		return (1);
 	}
 	else

@@ -6,13 +6,13 @@
 /*   By: helbouaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 10:12:29 by helbouaz          #+#    #+#             */
-/*   Updated: 2018/11/23 13:17:58 by helbouaz         ###   ########.fr       */
+/*   Updated: 2018/12/06 15:08:49 by helbouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_putoct(unsigned long long  nbr)
+char		*ft_putoct(uintmax_t  nbr)
 {
 	char	*temp;
 	char	temp2[2];
